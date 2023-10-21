@@ -1,0 +1,124 @@
+:local(body) {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+:local(#cartMainContainer) {
+    padding: 90px 50px;
+}
+
+:local(#cartContainer) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+/*aa*/
+#cartItemsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20px; /* Create space on the right for the total */
+}
+
+
+:local(#box img) {
+    width: 80px;
+    float: left;
+    border-radius: 10px;
+    margin-right: 50px;
+}
+
+:local(#boxContainer) {
+    display: grid;
+    grid-gap: 20px;
+    padding: 20px;
+    width: 100%;
+    /* float: left; */
+}
+
+:local(#box) {
+    position: relative;
+    background-color: white;
+    box-shadow: 1px 2px 6px 2px rgb(219, 219, 219);
+    border-radius: 10px;
+    width: 100%;
+    /* margin: auto */
+    padding: 20px 10px;
+}
+
+:local(#box:hover) {
+    box-shadow: 0px 1px 3px 2px rgb(185, 185, 185);
+}
+
+:local(#totalContainer) {
+    width: 50%;
+    padding: 20px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 2px 6px 2px rgb(219, 219, 219);
+}
+
+:local(#totalContainer:hover) {
+    box-shadow: 0px 1px 3px 2px rgb(185, 185, 185);
+}
+
+:local(button) {
+    padding: 8px 12px;
+    background-color: rgb(3, 122, 122);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+:local(button a) {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+:local(button:hover) {
+    background-color: rgb(3, 94, 94);
+}
+
+:local(button a:focus) {
+    outline: none;
+}
+
+:local(#totalContainer h2) {
+    color: black;
+}
+:local(#totalContainer h4) {
+    color: black;
+}
+:local(#box h4) {
+    color: black;
+}
+
+
+
+/* ----------------------------- MEDIA QUERY --------------------------- */
+
+@media(max-width: 800px) {
+    :local(img) {
+        width: 60px;
+        margin-right: 20px;
+    }
+
+    :local(#cartMainContainer) {
+        padding: 90px 20px;
+    }
+}
+
+@media(max-width: 555px) {
+    :local(#cartContainer) {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    :local(#boxContainer) {
+        padding: 20px;
+        width: 80%;
+    }
+}
