@@ -74,12 +74,7 @@ function Header() {
                         <a style={{ cursor: 'pointer' }} onClick={() => navigate("/cart")}> <i className="fas fa-shopping-cart addedToCart"><div id="badge"> {state.length} </div></i></a>
                         <a style={{ cursor: 'pointer' }} onClick={() => navigate("/ordersdetail")}> <i className="fas fa-credit-card addedToCart"></i></a>
 
-                        {(userImage == '' ? <i style={{ "cursor": "pointer" }} onClick={(e) => handleGetProfile(e)} className="fas fa-user-circle userIcon"></i> : <img onClick={(e) => handleGetProfile(e)} style={{
-                            "width": "50px",
-                            "height": "50px",
-                            "borderRadius": "50%",
-                            "overflow": "hidden",
-                            "cursor": "pointer",
+                        {(userImage == '' ? <i style={{ "cursor": "pointer" }} onClick={(e) => handleGetProfile(e)} className="fas fa-user-circle userIcon"></i> : <img className='' onClick={(e) => handleGetProfile(e)} style={{
 
                         }} src={`http://localhost:8000/images/${userImage}`} />)}
 

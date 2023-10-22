@@ -10,7 +10,7 @@ body {
     padding: 5px 8px;
     font-size: 14px;
     top: 10px;
-    right: 158px;
+    right: 10.1%;
 }
 
 #container {
@@ -81,6 +81,15 @@ body {
     font-size: 45px;
 }
 
+.userImage {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+
 
 #input {
     width: 35em;
@@ -105,8 +114,8 @@ body {
 
 /* ----------------------------- MEDIA QUERY --------------------------- */
 
-@media(max-width: 1300px) {
-    
+@media(max-width: 1400px) {
+
     #collection {
         font-size: 13px;
     }
@@ -114,20 +123,24 @@ body {
     #input {
         width: 25em;
     }
+
+    #badge {
+        right: 140px;
+    }
 }
 
 @media(max-width: 1212px) {
+    #container #accessories {
+        padding-left: 10px;
+    }
+
     #collection {
         font-size: 13px;
     }
 
-    #input {
-        width: 20em;
-    }
 
-    .addedToCart {
-        font-size: 1.5em;
-        margin: 10px 20px;
+    #badge {
+        right: 140px;
     }
 }
 
@@ -143,6 +156,11 @@ body {
 }
 
 @media(max-width: 750px) {
+    #badge {
+        font-size: 9px;
+        right: 130px;
+    }
+
     #shopName {
         font-size: 28px;
     }
@@ -155,9 +173,14 @@ body {
         font-size: 35px;
     }
 
+    .userImage {
+        width: 35px;
+        height: 35px;
+    }
+
+
     .addedToCart {
         font-size: 1.2em;
-        margin: 10px 20px;
     }
 }
 
@@ -173,106 +196,28 @@ body {
     .userIcon {
         font-size: 30px;
     }
+
+    .userImage {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    #badge {
+        font-size: 9px;
+        right: 125px;
+        top: 8px
+    }
+
 }
 
 @media(max-width: 550px) {
     #container {
         padding: 20px 25px;
     }
-}
 
-/* badge media */
-
-@media(max-width: 1480px) {
     #badge {
-        right: 150px;
-    }
-}
-
-@media(max-width: 1426px) {
-    #badge {
-        right: 142px;
-    }
-}
-
-@media(max-width: 1360px) {
-    #badge {
-        right: 136px;
-    }
-}
-
-@media(max-width: 1320px) {
-    #badge {
-        right: 129px;
-    }
-}
-
-@media(max-width: 1259px) {
-    #badge {
-        right: 119px;
-    }
-}
-
-@media(max-width: 1212px) {
-    #badge {
-        right: 96px;
-    }
-}
-
-@media(max-width: 1155px) {
-    #badge {
-        right: 87px;
-    }
-}
-
-@media(max-width: 1090px) {
-    #badge {
-        right: 119px;
-    }
-}
-
-@media(max-width: 1030px) {
-    #badge {
-        right: 109px;
-    }
-}
-
-@media(max-width: 970px) {
-    #badge {
-        right: 100px;
-    }
-}
-
-@media(max-width: 910px) {
-    #badge {
-        right: 94px;
-    }
-}
-
-@media(max-width: 850px) {
-    #badge {
-        right: 87px;
-    }
-}
-
-@media(max-width: 750px) {
-    #badge {
-        right: 87px;
-        padding: 3px 6px;
-        font-size: 12px;
-        top: 12px;
-    }
-}
-
-@media(max-width: 650px) {
-    #badge {
-        right: 78px;
-    }
-}
-
-@media(max-width: 550px) {
-    #badge {
-        right: 62px;
-        top: 18px;
+        right: 110px;
+        top: 10px
     }
 }
