@@ -18,15 +18,17 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-right: 20px; /* Create space on the right for the total */
+    /* Create space on the right for the total */
 }
 
 
 :local(#box img) {
-    width: 80px;
+    width: 120px;
     float: left;
     border-radius: 10px;
     margin-right: 50px;
+    height: 150px;
+
 }
 
 :local(#boxContainer) {
@@ -34,6 +36,7 @@
     grid-gap: 20px;
     padding: 20px;
     width: 100%;
+
     /* float: left; */
 }
 
@@ -44,7 +47,6 @@
     border-radius: 10px;
     width: 100%;
     /* margin: auto */
-    padding: 20px 10px;
 }
 
 :local(#box:hover) {
@@ -52,7 +54,7 @@
 }
 
 :local(#totalContainer) {
-    width: 50%;
+    /*width: 50%;*/
     padding: 20px;
     margin: auto;
     background-color: white;
@@ -89,9 +91,11 @@
 :local(#totalContainer h2) {
     color: black;
 }
+
 :local(#totalContainer h4) {
     color: black;
 }
+
 :local(#box h4) {
     color: black;
 }
@@ -100,18 +104,9 @@
 
 /* ----------------------------- MEDIA QUERY --------------------------- */
 
-@media(max-width: 800px) {
-    :local(img) {
-        width: 60px;
-        margin-right: 20px;
-    }
 
-    :local(#cartMainContainer) {
-        padding: 90px 20px;
-    }
-}
 
-@media(max-width: 555px) {
+@media(max-width: 1150px) {
     :local(#cartContainer) {
         display: grid;
         grid-template-columns: 1fr;
@@ -119,6 +114,13 @@
 
     :local(#boxContainer) {
         padding: 20px;
-        width: 80%;
+        width: 100%;
     }
+
+    :local(#box img) {
+        margin-right: 20px;
+        width: 100px;
+        height: 120px;
+    }
+
 }

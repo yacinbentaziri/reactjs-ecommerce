@@ -85,7 +85,7 @@ function Auth() {
 
       <ToastContainer closeButton={false} />
 
-      <div className={`container ${isSignUp ? 'change' : ''}`}>
+      <div style={{"z-index" : 0}} className={`container ${isSignUp ? 'change' : ''}`}>
         <div className="forms-container">
           {isSignUp ? (
             <div className="form-control signup-form">
@@ -125,6 +125,14 @@ function Auth() {
           </div>
         </div>
       </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+
+
     </div>
   );
 }

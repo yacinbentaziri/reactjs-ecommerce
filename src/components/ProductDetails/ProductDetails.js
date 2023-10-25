@@ -36,14 +36,14 @@ function ProductDetails() {
 
     useEffect(() => {
         setProductDetails(location.state)
-        
+
         // CHECK IF THE PRODUCT HAS BEEN ADDED IN CART ALREADY OR NO
         let getStateLength = state.length
         state = state.filter(item => item._id !== location.state._id)
 
         if (state.length < getStateLength) setCartState(true)
     }, [])
-    
+
     const handleImageClick = (pic) => {
         setPicSelected("http://localhost:8000/images/" + pic)
     }
@@ -63,6 +63,7 @@ function ProductDetails() {
         productDetails && (
             <div>
                 <Header />
+                <br/>
                 <div className="containerProduct">
                     <div className="containerD">
                         <div className="imageSection">
@@ -76,7 +77,8 @@ function ProductDetails() {
                                 <h4 style={{ color: '#4682B4' }}>{productDetails.brand}</h4>
                                 <h4 style={{ color: "black" }}>{productDetails.price} DNT</h4>
                                 <h4>Description</h4>
-                                <p>{productDetails.description}</p>
+                                <div className="productDescription">{productDetails.description}</div>
+                                <br/>
                             </div>
                             <NumberInput ref={qte} min={1} defaultValue={productDetails.qte || 1}
                                 slots={{

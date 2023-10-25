@@ -8,6 +8,9 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import MyCustomLoading from '../../object/MyCustomLoading/MyCustomLoading ';
+import { useNavigate } from 'react-router-dom';
+
+
 
 function OrdersDetail() {
 
@@ -61,13 +64,24 @@ function OrdersDetail() {
                 begin: 0,
                 end: orders.length > 5 ? 5 : orders.length,
             })
-            ordersAndOrderPricesSlice()
+            //ordersAndOrderPricesSlice()
+
         }
     }, [orderPrices]);
 
+    // condition wa9tli awl mara bech i7ot valeuret tableau w t'afficher direct
+    useEffect(() => {
+        ordersAndOrderPricesSlice()
+    }, [currentPagination.begin == null])
 
+    const navigate = useNavigate()
 
     useEffect(() => {
+        const userExist = JSON.parse(localStorage.getItem('user'))
+        if (!userExist) {
+            return navigate("/auth")
+
+        }
         const getproductprice = async (productId) => {
             try {
                 const resp = await axios.get("http://localhost:8000/api/product/getproductbyid/" + productId);
@@ -116,9 +130,9 @@ function OrdersDetail() {
 
 
 
-
+    console.log(orderPricesToShow);
     return (
-        orderPricesToShow != null && ordersToShow != null && orders != null && orderPrices != null ?
+        (orderPricesToShow != null && ordersToShow != null && orders != null && orderPrices != null) ?
             (
                 <div>
                     <Header />
@@ -130,15 +144,18 @@ function OrdersDetail() {
                             {/* Orders Table */}
                             <div className="col-lg-12 pb-3">
                                 <div className="table-responsive">
-                                    <table className="table table-hover mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th>Order #</th>
-                                                <th>Date Purchased</th>
-                                                <th>Status</th>
-                                                <th>Total</th>
-                                            </tr>
-                                        </thead>
+                                    <table className="table table-hover table-responsive mb-0">
+                                        {
+                                            orderPricesToShow.length >= 0 && <thead>
+                                                <tr>
+                                                    <th>Order #</th>
+                                                    <th>Date Purchased</th>
+                                                    <th>Status</th>
+                                                    <th>Total</th>
+                                                </tr>
+                                            </thead>
+
+                                        }
                                         <tbody>
                                             {
                                                 (new Array(orderPricesToShow.length).fill(0)).map((val, index) => (

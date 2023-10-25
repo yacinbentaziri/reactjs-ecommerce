@@ -6,7 +6,6 @@ import { removeAllItem } from '../../redux/features/products';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import jwtInterceptor from '../../helpers/jwtInterceptor';
-import MyCustomLoading from '../../object/MyCustomLoading/MyCustomLoading ';
 
 function PaymentStatus() {
     const [serachParams] = useSearchParams()
@@ -58,7 +57,7 @@ function PaymentStatus() {
     return (
         <div>
             <Header />
-            {PaymentStatus === null ? <MyCustomLoading type="spinningBubbles" color="black" /> :
+            {PaymentStatus === null ? <div style={{height : "500px"}} /> :
                 PaymentStatus === "SUCCESS" ?
                     <div id="orderContainer">
                         <div id="check"><i className="fas fa-check-circle"></i></div>
