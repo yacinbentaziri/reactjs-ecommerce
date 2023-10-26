@@ -64,15 +64,17 @@ function OrdersDetail() {
                 begin: 0,
                 end: orders.length > 5 ? 5 : orders.length,
             })
-            //ordersAndOrderPricesSlice()
+            ordersAndOrderPricesSlice()
 
         }
     }, [orderPrices]);
 
     // condition wa9tli awl mara bech i7ot valeuret tableau w t'afficher direct
-    useEffect(() => {
-        ordersAndOrderPricesSlice()
-    }, [currentPagination.begin == null])
+    /*useEffect(() => {
+        if (currentPagination.begin == 0) {
+            console.log("looooooooooooooooooooool");
+        } ordersAndOrderPricesSlice()
+    }, [currentPagination.begin])*/
 
     const navigate = useNavigate()
 
@@ -130,7 +132,6 @@ function OrdersDetail() {
 
 
 
-    console.log(orderPricesToShow);
     return (
         (orderPricesToShow != null && ordersToShow != null && orders != null && orderPrices != null) ?
             (
