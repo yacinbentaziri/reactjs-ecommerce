@@ -64,17 +64,17 @@ function OrdersDetail() {
                 begin: 0,
                 end: orders.length > 5 ? 5 : orders.length,
             })
-            ordersAndOrderPricesSlice()
+            //ordersAndOrderPricesSlice()
 
         }
     }, [orderPrices]);
 
     // condition wa9tli awl mara bech i7ot valeuret tableau w t'afficher direct
-    /*useEffect(() => {
+    useEffect(() => {
         if (currentPagination.begin == 0) {
             console.log("looooooooooooooooooooool");
         } ordersAndOrderPricesSlice()
-    }, [currentPagination.begin])*/
+    }, [currentPagination.begin])
 
     const navigate = useNavigate()
 
