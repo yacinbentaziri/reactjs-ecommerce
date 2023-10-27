@@ -12,7 +12,7 @@ function Content() {
 
     const handleGetProducts = async () => {
         try {
-            const products = await axios.get("https://nodejs-ecommerce-seven.vercel.app/api/product/getallproducts")
+            const products = await axios.get("https://nodejs-ecommerce-agdc.onrender.com/api/product/getallproducts")
             setProducts(products.data.data)
         } catch (err) {
             console.log(err);
