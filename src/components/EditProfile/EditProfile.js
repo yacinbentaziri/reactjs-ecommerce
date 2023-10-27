@@ -7,6 +7,7 @@ import { Box, LinearProgress } from '@mui/material';
 import { ToastContainer, toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { setUserImage } from '../../redux/features/userImage';
+import { useNavigate } from 'react-router-dom';
 
 function EditProfile() {
     useEffect(() => {
@@ -127,6 +128,12 @@ function EditProfile() {
         }
     }
 
+    const navigate = useNavigate()
+    const logOut = () => {
+        localStorage.setItem("user", null);
+        navigate("/auth")
+    }
+
     return (
         <div>
             {loading && (
@@ -210,6 +217,8 @@ function EditProfile() {
                     </div>
                 </div>
             </div>
+            <button style={{ "margin": auto }} onClick={() => logOut()} class="btn btn-danger" type="button">Logout</button>
+
 
             <Footer />
         </div>
