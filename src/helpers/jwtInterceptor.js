@@ -20,6 +20,7 @@ jwtInterceptor.interceptors.response.use(
 const retryOriginalRequest = async (config) => {
     try {
         const response = await axios(config);
+        console.log(response);
         return response;
     } catch (error) {
         return Promise.reject(error);
