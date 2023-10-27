@@ -217,7 +217,7 @@ function EditProfile() {
                     </div>
                 </div>
             </div>
-            <button style={{ "margin": auto }} onClick={() => logOut()} class="btn btn-danger" type="button">Logout</button>
+            <button style={{ "margin": "auto" }} onClick={() => logOut()} class="btn btn-danger" type="button">Logout</button>
             <Footer />
         </div>
     );
