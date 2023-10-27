@@ -6,6 +6,7 @@ import { removeAllItem } from '../../redux/features/products';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import jwtInterceptor from '../../helpers/jwtInterceptor';
+import MyCustomLoading from '../../object/MyCustomLoading/MyCustomLoading ';
 
 function PaymentStatus() {
     const [serachParams] = useSearchParams()
