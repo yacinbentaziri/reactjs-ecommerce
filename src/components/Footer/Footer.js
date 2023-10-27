@@ -16,7 +16,7 @@ function Footer() {
                 <br />
                 <br />
 
-                <div id="credit"> <a href="https://www.linkedin.com/in/yassine-ben-taziri-60a887257/" target="_blank"> YACINE BENTAZIRI </a></div>
+                <div id="credit"><a href="https://www.linkedin.com/in/yassine-ben-taziri-60a887257/" target="_blank"> © YACINE BENTAZIRI </a></div>
             </section>
 
         </footer>
