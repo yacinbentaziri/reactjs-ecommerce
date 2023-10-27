@@ -86,7 +86,7 @@ function OrdersDetail() {
         }
         const getproductprice = async (productId) => {
             try {
-                const resp = await axios.get("http://localhost:8000/api/product/getproductbyid/" + productId);
+                const resp = await axios.get("https://nodejs-ecommerce-agdc.onrender.com/api/product/getproductbyid/" + productId);
                 return resp.data.data.price;
             } catch (err) {
                 // Handle errors appropriately
@@ -105,7 +105,7 @@ function OrdersDetail() {
         const getordersbyid = async () => {
             try {
                 const userid = JSON.parse(localStorage.getItem('user')).data._id;
-                const resp = await jwtInterceptor.get("http://localhost:8000/api/order/getordersbyid/" + userid, { withCredentials: true });
+                const resp = await jwtInterceptor.get("https://nodejs-ecommerce-agdc.onrender.com/api/order/getordersbyid/" + userid, { withCredentials: true });
                 return resp.data.data;
             } catch (err) {
                 // Handle errors appropriately

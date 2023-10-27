@@ -45,7 +45,7 @@ function ProductDetails() {
     }, [])
 
     const handleImageClick = (pic) => {
-        setPicSelected("http://localhost:8000/images/" + pic)
+        setPicSelected("https://nodejs-ecommerce-agdc.onrender.com/images/" + pic)
     }
 
     const handleAddItemToCart = () => {
@@ -67,7 +67,7 @@ function ProductDetails() {
                 <div className="containerProduct">
                     <div className="containerD">
                         <div className="imageSection">
-                            <img id="imgDetails" src={picSelected || "http://localhost:8000/images/" + productDetails.images[0]} alt={productDetails.productName} />
+                            <img id="imgDetails" src={picSelected || "https://nodejs-ecommerce-agdc.onrender.com/images/" + productDetails.images[0]} alt={productDetails.productName} />
                         </div>
                         <div className="productDetails" >
                             <div className="top">
@@ -104,7 +104,7 @@ function ProductDetails() {
                                     <img
                                         key={index}
                                         id="previewImg"
-                                        src={"http://localhost:8000/images/" + photo}
+                                        src={"https://nodejs-ecommerce-agdc.onrender.com/images/" + photo}
                                         alt={`Preview ${index}`}
                                         onClick={() => handleImageClick(photo)}
                                     />

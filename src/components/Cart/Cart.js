@@ -45,7 +45,7 @@ function Cart() {
                 }
                 if (cartItems.length > 0) {
                     const user = JSON.parse(localStorage.getItem('user')).data._id
-                    const resp = await jwtInterceptor.post("http://localhost:8000/api/payment/send/" + user, { amount: totalAmount }, { withCredentials: true })
+                    const resp = await jwtInterceptor.post("https://nodejs-ecommerce-agdc.onrender.com/api/payment/send/" + user, { amount: totalAmount }, { withCredentials: true })
                     window.location.href = resp.data.data.result.link
                 } else {
                     alert("0 item")
@@ -71,7 +71,7 @@ function Cart() {
                         {cartItems.map((cartItem, index) => (
                             <div style={{ cursor: 'pointer' }} onClick={() => handleGoToProductDetails(cartItem)} key={index} id={styles.boxContainer}>
                                 <div id={styles.box}>
-                                    <img src={"http://localhost:8000/images/" + cartItem.images[0]} alt={cartItem.productName} />
+                                    <img src={"https://nodejs-ecommerce-agdc.onrender.com/images/" + cartItem.images[0]} alt={cartItem.productName} />
                                     <h4 style={{ "margin-top": "10px", "font-weight": "bold" }}>{cartItem.productName}</h4>
                                     <h4>Quantity : {cartItem.qte} </h4>
                                     <h4>Amount: {cartItem.price} DNT</h4>

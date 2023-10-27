@@ -37,7 +37,7 @@ function Reasearch() {
         return (
             <div id="box">
                 <a style={{ cursor: 'pointer' }} onClick={() => goToProductDetails(props.product)}>
-                    <img src={"http://localhost:8000/images/" + props.product.images[0]} alt={props.product.productName} />
+                    <img src={"https://nodejs-ecommerce-agdc.onrender.com/images/" + props.product.images[0]} alt={props.product.productName} />
                     <div id="details">
                         <h4 style={{ "color": "black", "padding-top": "10px" }}>{props.product.productName}</h4>
                         <h4 style={{ "color": "#4682B4" }}>{props.product.brand}</h4>

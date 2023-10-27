@@ -42,7 +42,7 @@ function Header() {
     const research = async (key) => {
         try {
             if (key.length > 0) {
-                const resp = await axios.post("http://localhost:8000/api/product/getproductbynameordescription", { key: key })
+                const resp = await axios.post("https://nodejs-ecommerce-agdc.onrender.com/api/product/getproductbynameordescription", { key: key })
                 console.log(resp.data);
                 navigate("/research", { state: resp.data.data })
             }
@@ -103,7 +103,7 @@ function Header() {
 
                         {(userImage == '' ? <i style={{ "cursor": "pointer" }} onClick={(e) => handleGetProfile(e)} className="fas fa-user-circle userIcon"></i> : <img className='userImage' onClick={(e) => handleGetProfile(e)} style={{
 
-                        }} src={`http://localhost:8000/images/${userImage}`} />)}
+                        }} src={`https://nodejs-ecommerce-agdc.onrender.com/images/${userImage}`} />)}
 
                     </div>
                 </div>

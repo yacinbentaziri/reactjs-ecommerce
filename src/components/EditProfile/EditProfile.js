@@ -81,7 +81,7 @@ function EditProfile() {
             }
 
             const _id = JSON.parse(localStorage.getItem('user')).data._id
-            const resp = await jwtInterceptor.put("http://localhost:8000/api/user/updateuser/" + _id, data, { withCredentials: true })
+            const resp = await jwtInterceptor.put("https://nodejs-ecommerce-agdc.onrender.com/api/user/updateuser/" + _id, data, { withCredentials: true })
             if (resp.data.success) {
                 setLoading(false)
                 toast.success(resp.data.msg, {
@@ -120,7 +120,7 @@ function EditProfile() {
         const id = JSON.parse(localStorage.getItem('user')).data._id
         try {
             console.log(formData);
-            const response = await jwtInterceptor.post(`http://localhost:8000/api/upload/${id}`, formData, { withCredentials: true })
+            const response = await jwtInterceptor.post(`https://nodejs-ecommerce-agdc.onrender.com/api/upload/${id}`, formData, { withCredentials: true })
             return response.data.data
         } catch (err) {
 
@@ -156,7 +156,7 @@ function EditProfile() {
                                         "height": "100px",
                                         "border-radius": "50%",
                                         "overflow": "hidden",
-                                    }} src={state.newImage == '' ? `http://localhost:8000/images/${state.image}` : `http://localhost:8000/images/${state.newImage}`} alt="User Image" />
+                                    }} src={state.newImage == '' ? `https://nodejs-ecommerce-agdc.onrender.com/images/${state.image}` : `https://nodejs-ecommerce-agdc.onrender.com/images/${state.newImage}`} alt="User Image" />
                                 ) : (
                                     <div className="fas fa-user-circle userIcon" style={{ "fontSize": '6em' }}></div>
                                 )}

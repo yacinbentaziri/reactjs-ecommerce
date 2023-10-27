@@ -25,7 +25,7 @@ function Auth() {
 
   const handleLogin = async (e) => {
     e.preventDefault()
-    const url = "http://localhost:8000/api/auth/signin"
+    const url = "https://nodejs-ecommerce-agdc.onrender.com/api/auth/signin"
     setLoading(true)
     try {
       const resp = await axios.post(url, { email: email, pwd: pwd }, {
@@ -47,7 +47,7 @@ function Auth() {
     e.preventDefault()
     if (!email.includes("@")) return
     if (pwd != confirmPwd) return
-    const url = "http://localhost:8000/api/auth/signup"
+    const url = "https://nodejs-ecommerce-agdc.onrender.com/api/auth/signup"
     setLoading(true)
     try {
       const resp = await axios.post(url, { username, email, pwd })

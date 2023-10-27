@@ -21,7 +21,7 @@ function PaymentStatus() {
         const userid = JSON.parse(localStorage.getItem('user')).data._id
         const handleCheckPaymentStatus = async () => {
             try {
-                const resp = await jwtInterceptor.post("http://localhost:8000/api/payment/verify/" + paymentid + "/" + userid, {}, { withCredentials: true });
+                const resp = await jwtInterceptor.post("https://nodejs-ecommerce-agdc.onrender.com/api/payment/verify/" + paymentid + "/" + userid, {}, { withCredentials: true });
                 setPaymentStatus(resp.data.data.result.status)
                 if (resp.data.data.result.status === "SUCCESS") {
                     addorder()
@@ -41,7 +41,7 @@ function PaymentStatus() {
                     all_payment_id.push(serachParams.get("payment_id"))
                     localStorage.setItem("all_payment_id", JSON.stringify(all_payment_id));
 
-                    const resp = await jwtInterceptor.post("http://localhost:8000/api/order/addorder", { cart: cartItems, user: userid }, { withCredentials: true })
+                    const resp = await jwtInterceptor.post("https://nodejs-ecommerce-agdc.onrender.com/api/order/addorder", { cart: cartItems, user: userid }, { withCredentials: true })
                 }
 
             } catch (err) {

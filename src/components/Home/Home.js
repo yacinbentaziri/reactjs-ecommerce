@@ -24,7 +24,7 @@ function Home() {
 
     const inter = async () => {
         const user = JSON.parse(localStorage.getItem("user"))
-        const resp = await jwtInterceptor.get("http://localhost:8000/api/auth/test/" + user.data._id, {
+        const resp = await jwtInterceptor.get("https://nodejs-ecommerce-agdc.onrender.com/api/auth/test/" + user.data._id, {
             withCredentials: true,
         })
         console.log(resp)

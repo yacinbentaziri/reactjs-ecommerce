@@ -8,7 +8,7 @@ jwtInterceptor.interceptors.response.use(
         const user = JSON.parse(localStorage.getItem("user"))
         if (error.response.data.msg == "jwt expired") {
             try {
-                await axios.get("http://localhost:8000/api/auth/refreshtoken/" + user.data._id,{ withCredentials: true })
+                await axios.get("https://nodejs-ecommerce-agdc.onrender.com/api/auth/refreshtoken/" + user.data._id,{ withCredentials: true })
                 const retryResponse = await retryOriginalRequest(error.config);
                 return retryResponse;
             } catch (error) {
