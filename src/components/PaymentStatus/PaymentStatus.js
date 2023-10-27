@@ -57,7 +57,8 @@ function PaymentStatus() {
     return (
         <div>
             <Header />
-            {PaymentStatus === null ? <div style={{height : "500px"}} /> :
+            {PaymentStatus === null ? <MyCustomLoading type="spinningBubbles" color="black" />
+                :
                 PaymentStatus === "SUCCESS" ?
                     <div id="orderContainer">
                         <div id="check"><i className="fas fa-check-circle"></i></div>
